@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+	    
+function mostrarHabilidades(usuarios) {
+  for (usuario of usuarios) {
+    console.log(
+      "O " +
+        usuario.nome +
+        " possui as habilidades: " +
+        usuario.habilidades.join(", ")
+    );
+  }
+}
+
+var usuarios = [
+  {
+    nome: "Diego",
+    habilidades: ["Javascript", "ReactJS", "Redux"]
+  },
+  {
+    nome: "Gabriel",
+    habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+  }
+];
+
+
+mostrarHabilidades(usuarios);
+	</script>
+</body>
+</html>
+//for (var i = 0; i < usuarios.length; i++) {
+      for (var j = 0; j < habilidades.length; j++) {
+            var habilities = habilidade[j] + ", ";
+      }
+      write("O " + usuarios[i] + " possui as habilidades: " + habilities + "."); </br>
+}
