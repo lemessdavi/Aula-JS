@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 03</title>
+</head>
+
+<body>
+    <ul></ul>
+
+    <script>
+        var names = ["Diego", "Gabriel", "Lucas", "Kankleyson"];
+        var lista = document.querySelector('ul');
+
+
+        for (name of names) {
+            var pontinho = document.createElement('li');
+            var conteudo = document.createTextNode(name);
+
+
+            pontinho.appendChild(conteudo);
+            lista.appendChild(pontinho);
+        }
+    </script>
+</body>
+
+</html>

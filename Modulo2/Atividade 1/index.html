@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 01</title>
+</head>
+
+<body>
+    <button id="criar">Criar Quadrado</button>
+
+    <div id="box"></div>
+
+    <script>
+        var btnElement = document.querySelector('#criar');
+        var boxElement = document.querySelector('#box');
+
+
+
+        btnElement.onclick = function () {
+            var box = document.createElement('div');
+
+
+            box.style.width = '100px';
+            box.style.height = '100px';
+            box.style.backgroundColor = 'red';
+
+            boxElement.appendChild(box);
+        };
+    </script>
+</body>
+
+</html>

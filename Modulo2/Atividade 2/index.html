@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 02</title>
+</head>
+
+<body>
+    <button id="criar">Criar Quadrado</button>
+
+    <div id="box"></div>
+
+    <script>
+        var btnElement = document.querySelector('#criar');
+        var boxElement = document.querySelector('#box');
+
+        function trocaCor() {
+            var letrasPraRandom = "0123456789ABCDEF";
+            var corzinha = "#" //randomificar!
+
+            for (var i = 0; i < 6; i++) {
+                corzinha += letrasPraRandom[Math.floor(Math.random() * 16)];
+            } // esqueminha pronto nheee
+            return corzinha;
+        }
+
+
+        btnElement.onclick = function () {
+            var box = document.createElement('div');
+
+
+            box.style.width = '100px';
+            box.style.height = '100px';
+            box.style.backgroundColor = 'red';
+
+            box.onmouseover = function () {
+                box.style.backgroundColor = trocaCor();
+            }
+
+            boxElement.appendChild(box);
+        };
+
+
+
+    </script>
+</body>
+
+</html>
