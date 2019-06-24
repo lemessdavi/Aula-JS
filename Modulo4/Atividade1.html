@@ -9,7 +9,7 @@
 <body>
     <script>
 
-        var usuarioIdade = parseInt( prompt("Qual sua idade?"));
+        var usuarioIdade = parseInt(prompt("Qual sua idade?"));
         function maioridade(idade) {
             return new Promise(function (resolve, reject) {
                 setTimeout(function () {
@@ -20,7 +20,11 @@
 
         maioridade(usuarioIdade)
             .then(function () {
-                console.log("Maior que 18");
+                if (idade = 18) {
+                    console.log("Voce tem 18!")
+                } else {
+                    console.log("Maior que 18");
+                }
             })
             .catch(function () {
                 console.log("Menor que 18");
