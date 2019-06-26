@@ -9,11 +9,7 @@
 <body>
     <script>
 
-<<<<<<< HEAD
-        var usuarioIdade = parseInt( prompt("Qual sua idade?"));
-=======
         var usuarioIdade = parseInt(prompt("Qual sua idade?"));
->>>>>>> db50599b86a30f581f1538ae2949bcf368f2517d
         function maioridade(idade) {
             return new Promise(function (resolve, reject) {
                 setTimeout(function () {
@@ -24,15 +20,11 @@
 
         maioridade(usuarioIdade)
             .then(function () {
-<<<<<<< HEAD
-                console.log("Maior que 18");
-=======
                 if (idade = 18) {  //  then e catch são apenas 2 parâmetros
                     console.log("Voce tem 18!") 
                 } else {
                     console.log("Maior que 18");
                 }
->>>>>>> db50599b86a30f581f1538ae2949bcf368f2517d
             })
             .catch(function () {
                 console.log("Menor que 18");
