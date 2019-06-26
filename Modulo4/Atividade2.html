@@ -4,15 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Atividade 4</title>
+    <title>Atividade 2</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js">//para não usar o xmlh</script>
 </head>
 <body>
     <script>
        var lista = document.querySelector("ul");
-       var pontinho = document.querySelector("li");
+       var criarPontinho = document.createElement("li");
        var input = document.querySelector("input");
-       
+
+       function criarRepositorio(repositorios) {
+           for (repo of repositorios) {
+               const texto = document.createTextNode(repo.nome);
+               const criarPontinho
+               
+               criarPontinho.appendChild(texto);
+               lista.appendChild(criarPontinho);
+           }           
+       }
+       function batata(){
+           var user = input.value;
+
+           if (!user) return;
+
+           axios.get("https://api.github.com/users/NDLemes/repos")
+           
+       }
+
     </script>
 </body>
 </html>
