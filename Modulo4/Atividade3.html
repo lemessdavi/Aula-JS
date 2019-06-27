@@ -8,5 +8,40 @@
 </head>
 <body>
     
+        <div id="user">
+                <input id="inputzada" type="text" placeholder="Qual seu Usuário?">
+                <button onclick="procurar()">Procurar</button>
+        
+                <ul>
+                    
+                </ul>
+        
+            </div>
+            <script>
+        
+                function procurar() {
+                    var input = document.getElementById("inputzada").value;
+                    axios.get("https://api.github.com/users/" + input + "/repos")
+                        .then(function (disney) {
+                            console.log(disney);
+        
+                            for (i = 0; i < disney.data.length; i++) {
+                                var texto = document.createTextNode(disney.data[i].name);
+                                var lista = document.querySelector("ul");
+                                var criarPontinho = document.createElement("li");
+        
+        
+                                criarPontinho.appendChild(texto);
+                                lista.appendChild(criarPontinho);
+                            }
+        
+                        })
+                        .catch(function (deuruim) {
+                            console.log(deuruim);
+                        })
+        
+        
+                }
+        
 </body>
 </html>
