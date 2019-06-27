@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Atividade 3</title>
 </head>
+
 <body>
-    
-        <div id="user">
-                <input id="inputzada" type="text" placeholder="Qual seu Usuário?">
-                <button onclick="procurar()">Procurar</button>
+
+    <div id="user">
+        <input id="inputzada" type="text" placeholder="Qual seu Usuário?">
+        <button onclick="procurar()">Procurar</button>
+
+        <ul id="ul">
+
+        </ul>
+
+    </div>
+    <script>
+
+
+
+
+        function procurar() {
+            var textoLoading = document.createTextNode("carregando...");
+            var lista = document.getElementById("ul");
+            var loading = document.createElement("li");
+            loading.appendChild(textoLoading);
+            var input = document.getElementById("inputzada").value;
+            axios.get("https://api.github.com/users/" + input + "/repos")
+                .then(function (disney) {
+                    console.log(disney);
+
+                    for (i = 0; i < disney.data.length; i++) {
+
+                        var criarPontinho = document.createElement('li');
+                        var texto = document.createTextNode(disney.data[i].name);
+                        criarPontinho.appendChild(texto);
+                        lista.appendChild(criarPontinho);
+                    }
+
+                })
+                .catch(function (deuruim) {
+                    criarPontinho.appendChild(texto);
+                    document.write("Error 404");
+                })
+
+
+        }
         
-                <ul>
-                    
-                </ul>
-        
-            </div>
-            <script>
-        
-                function procurar() {
-                    var input = document.getElementById("inputzada").value;
-                    axios.get("https://api.github.com/users/" + input + "/repos")
-                        .then(function (disney) {
-                            console.log(disney);
-        
-                            for (i = 0; i < disney.data.length; i++) {
-                                var texto = document.createTextNode(disney.data[i].name);
-                                var lista = document.querySelector("ul");
-                                var criarPontinho = document.createElement("li");
-        
-        
-                                criarPontinho.appendChild(texto);
-                                lista.appendChild(criarPontinho);
-                            }
-        
-                        })
-                        .catch(function (deuruim) {
-                            console.log(deuruim);
-                        })
-        
-        
-                }
-        
-</body>
-</html>
+</body >
+</html >
