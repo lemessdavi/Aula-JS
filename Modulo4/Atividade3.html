@@ -19,16 +19,15 @@
         </ul>
 
     </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
-
-
-
 
         function procurar() {
             var textoLoading = document.createTextNode("carregando...");
             var lista = document.getElementById("ul");
             var loading = document.createElement("li");
             loading.appendChild(textoLoading);
+            lista.appendChild(loading);
             var input = document.getElementById("inputzada").value;
             axios.get("https://api.github.com/users/" + input + "/repos")
                 .then(function (disney) {
@@ -43,13 +42,12 @@
                     }
 
                 })
-                .catch(function (deuruim) {
-                    criarPontinho.appendChild(texto);
+                .catch(function () {
                     document.write("Error 404");
                 })
 
 
         }
-        
+    </script>
 </body >
 </html >
